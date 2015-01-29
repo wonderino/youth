@@ -1,0 +1,97 @@
+body {
+  margin: .5em auto .5em auto;
+  font-family : "Apple SD Gothic Neo","Malgun Gothic",Dotum,sans-serif;
+
+}
+
+div.title {
+  margin : 0 auto;
+  width : 100%;
+  font-size : 1em;
+  text-align: center;
+  font-weight: bold;
+  font-color:#353535;
+}
+
+div.desc, div.source {
+  padding : 4px 16px;
+  font-size : 13px;
+  font-color:#aaa;
+  font-style : italic;
+}
+
+div.source {
+  text-align : right;
+}
+
+div.chart {
+  margin: 0 auto;
+}
+
+text.who, text.what, text.crazy {
+  transition : fill .4s;
+  -webkit-transition : fill .4s;
+  fill : #aaa;
+  cursor : pointer;
+}
+text.who, text.what{
+  font-size: 14px ;
+  /*font-weight : 100;*/
+}
+
+text.crazy {
+  font-size: 16px;
+}
+
+text.selected {
+
+}
+
+rect.bbox {
+  transition : fill .4s;
+  -webkit-transition : fill .4s;
+}
+
+text.selected.blue, rect.bbox.blue {
+  fill : #1a468c;
+}
+
+text.selected.yellow, rect.bbox.yellow {
+  fill : #f9a33d;
+}
+text.selected.red, rect.bbox.red {
+  fill : #d13d30;
+}
+
+rect.bbox {
+  opacity : .2;
+}
+
+
+.link {
+  transition : stroke .4s;
+  -webkit-transition : stroke .4s;
+  stroke : #aaa;
+  stroke-opacity : 0.5;
+  stroke-width : .5;
+  fill: none;
+}
+
+
+.link.selected {
+
+  stroke-width : 1.5;
+  stroke-opacity : 1.0;
+}
+
+.link.selected.blue {
+  stroke : #1a468c;
+}
+
+.link.selected.yellow {
+  stroke : #f9a33d;
+}
+
+.link.selected.red {
+  stroke : #d13d30;
+}

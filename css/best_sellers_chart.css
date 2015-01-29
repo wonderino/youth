@@ -1,0 +1,129 @@
+body {
+  margin: 0 auto;
+  font-family : "Apple SD Gothic Neo","Malgun Gothic",Dotum,sans-serif
+}
+
+div.chart {
+  margin: 0 auto;
+}
+div.menu {
+  color : #353535;
+  padding : 4px;
+  margin : 0 auto;
+  width : 100%;
+  font-size : 14px;
+  text-align: center;
+}
+
+div.menu input{
+  width: 10%;
+  font-size: 14px;
+}
+
+div.title {
+  margin : 0 auto 8px auto;
+  width : 100%;
+  font-size : 1em;
+  text-align: center;
+  font-weight: bold;
+  font-color:#353535;
+}
+
+div.year {
+  width : 80%;
+  display:inline-block;
+  font-size : .9em;
+}
+
+div.menu input {
+  display : inline-block;
+  margin : 0 6px;
+}
+
+div.desc, div.source {
+  padding : 4px 16px;
+  font-size : 13px;
+  font-color:#aaa;
+  font-style : italic;
+}
+
+div.source {
+  text-align : right;
+}
+
+div.book_info {
+  transition : border .4s, height .4s;
+  display:block;
+  clear:both;
+  margin : 0 5px;
+  padding : 2px 10px;
+  text-align : left;
+  font-size : 13px;
+  color : #545454;
+  border : 3px solid;
+  /*height : 40px;*/
+}
+
+div.book_info p {
+  margin: 2px 0;
+}
+
+input.left {
+  float :left;
+}
+
+input.right {
+  float :right;
+}
+
+.legend text{
+  font-size: 11px ;
+}
+
+.chart .menu{
+  font : 100% ;
+}
+
+.cell {
+  cursor : pointer;
+
+}
+
+.cell text {
+  fill: #eee;
+  text-anchor: middle;
+  font : 14px;
+}
+
+
+.cell.selected rect{
+  /*stroke : #646464;*/
+  /*stroke-width : 2.5;*/
+}
+
+.cell.selected text {
+  fill: #353535;
+}
+
+.x.axis text {
+  fill : #545454;
+  font-size : 12px;
+  visibility : hidden;
+}
+
+.x.axis path {
+  display : none;
+}
+
+rect.bar {
+  opacity : .5;
+  cursor : pointer;
+}
+
+rect.bar.selected {
+  opacity : 1;
+}
+
+.x.axis text.selected {
+  visibility : visible;
+}

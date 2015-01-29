@@ -1,0 +1,20 @@
+{
+  "title":"다음뉴스펀딩 X 뉴스젤리",
+  "desc" :"blah blah blah",
+  "pages" : [
+    {
+      "title" : "미칠 것을 권하는 자기계발서들",
+      "href":"be_crazy",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "에필로그",
+      "chart_no" : 0
+    },
+    {
+      "title" : "베스트셀러 속 자기계발서",
+      "href":"bestseller",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "에필로그",
+      "chart_no" :1
+    }
+  ]
+}
