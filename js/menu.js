@@ -1,50 +1,64 @@
+(function() {
 $(document).ready(function() {
   var host = window.location.host;
   var protocol = window.location.protocol;
+  var href = window.location.href;
+  var splited = href.split('/');
+
   d3.json(protocol + '//' + host + '/menu.json',function(data) {
+    var thisPage = data.pages.filter(function(p) {
+      return p.href === splited[splited.length-2]
+    })
+    if (thisPage.length == 0) {
+      return;
+    }
+    thisPage = thisPage[0];
+    thisPage.is_current = true;
+
     var info = d3.select('#myInfo')
     info.select('header h1.title').html(data.title)
     info.select('ul.table-view li').html(data.desc)
 
-    var menu
-    /*
-      set the menu and the back-button
-    */
+    d3.select('#myBackButton')
+      .property('href', thisPage.href_back)
 
-    /*
-      [x] set title
-      []
-    */
+    var menu = d3.select('#myMenu')
+
+    menu.select('h1.title').html(data.title);
+
+    var nestedData = d3.nest()
+      .key(function(d) {return d.series;})
+      .sortValues(function(a,b) {return a.chart_no - b.chart_no})
+      .entries(data.pages);
+
+    var allPages = nestedData.reduce(function(pre, cur) {
+      pre.push({'title':cur.key, 'is_divider':true})
+      Array.prototype.push.apply(pre, cur.values);
+      return pre;
+    }, [])
+
+    var li = menu.select('ul.table-view')
+    .selectAll('li.table-view-cell')
+      .data(allPages)
+    .enter().append('li')
+    .attr('class', 'table-view-cell')
+
+    li.filter(function(d) {
+      return !d.is_divider;
+    })
+    .append('a')
+    .attr('href', function(d) {
+      var url = protocol + '//' + host+'/html/'+d.href +'/';
+      return url;
+    })
+    .attr('data-ignore', 'push')
+    .html(function(d){return d.title})
+
+    li.filter(function(d) {
+      return d.is_divider;
+    })
+    .classed({'table-view-divider':true})
+    .html(function(d){return d.title})
   });
 });
-
-/*
-<div id="myInfo" class="popover">
-  <header class="bar bar-nav">
-    <h1 class="title">다음뉴스펀딩 인터액티브 챠트에 대하여</h1>
-  </header>
-  <ul class="table-view">
-    <li class="table-view-cell">이것은 어쩌구 블라블라...</li>
-  </ul>
-</div>
-
-
-<div id="myMenu" class="popover">
-  <header class="bar bar-nav">
-    <h1 class="title">다음뉴스펀딩 인터액티브 챠트</h1>
-  </header>
-  <ul class="table-view">
-    <li class="table-view-cell table-view-divider">에필로그</li>
-    <li class="table-view-cell"><a href="../be_crazy" data-ignore="push">미칠 것을 권하는 자기계발서들</a></li>
-    <li class="table-view-cell"><a href="." data-ignore="push">베스트셀로 속 자기계발서</a><span class="icon icon-check"></span></li> <!--ontouchstart="alert(123) style="display: none;" -->
-    <li class="table-view-cell">Item3</li>
-    <li class="table-view-cell">Item4</li>
-    <li class="table-view-cell table-view-divider">1화</li>
-    <li class="table-view-cell">Item5</li>
-    <li class="table-view-cell">Item6</li>
-    <li class="table-view-cell">Item7</li>
-    <li class="table-view-cell">Item8</li>
-  </ul>
-</div> <!-- end of popover -->
-
-*/
+}());
