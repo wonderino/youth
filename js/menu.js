@@ -1,5 +1,4 @@
 (function() {
-$(document).ready(function() {
   var host = window.location.host;
   var protocol = window.location.protocol;
   var href = window.location.href;
@@ -15,6 +14,11 @@ $(document).ready(function() {
     thisPage = thisPage[0];
     thisPage.is_current = true;
 
+    d3.select('body header h1.title')
+      .html(thisPage.title)
+      .append('span')
+      .attr('class', 'icon icon-caret')
+
     var info = d3.select('#myInfo')
     info.select('header h1.title').html(data.title)
     info.select('ul.table-view li').html(data.desc)
@@ -23,7 +27,6 @@ $(document).ready(function() {
       .property('href', thisPage.href_back)
 
     var menu = d3.select('#myMenu')
-
     menu.select('h1.title').html(data.title);
 
     var nestedData = d3.nest()
@@ -53,6 +56,11 @@ $(document).ready(function() {
     })
     .attr('data-ignore', 'push')
     .html(function(d){return d.title})
+    .filter(function(d) {
+      return d.is_current;
+    })
+    .append('span')
+    .attr('class', 'icon icon-check')
 
     li.filter(function(d) {
       return d.is_divider;
@@ -60,5 +68,4 @@ $(document).ready(function() {
     .classed({'table-view-divider':true})
     .html(function(d){return d.title})
   });
-});
 }());

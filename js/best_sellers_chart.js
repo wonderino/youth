@@ -84,12 +84,17 @@ d3.bestSeller = function module() {
     _selection.each(function(_data) {
       self = this;
       d3.select(this).style('width', windowWidth+'px');
+      var menu = d3.select(this).append('div')
+        .attr('class', 'menu')
+      menu.append('input')
+        .attr('class', 'left')
+        .property({'type':'button', 'value':'<<'})
+      menu.append('span')
+        .attr('class', 'year')
+      menu.append('input')
+        .attr('class', 'right')
+        .property({'type':'button', 'value':'>>'})
 
-      /*
-      d3.select(this).insert("div",":first-child")
-      .attr('class', 'title')
-      .html('역대 자기계발부분 베스트셀러')
-      */
       var legend = d3.select(this).append('svg')
       .attr("width", width + margin.left + margin.right)
       .attr("height", y.rangeBand()*.5)
@@ -141,7 +146,7 @@ d3.bestSeller = function module() {
         .append('p')
         .attr('class', 'desc')
 
-      var menu = d3.select(this).select('div.menu').style('visibility', 'visible')
+
       isbnMap = isbnMap.map(_data, d3.map);
       yearNest = yearNest.entries(_data);
       categoryNest = categoryNest.map(_data, d3.map);
