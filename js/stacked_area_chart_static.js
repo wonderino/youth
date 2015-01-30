@@ -65,14 +65,22 @@ d3.stackedAreaStatic = function module() {
       .append('label')
       .attr('for', 'stacked_or_not')
       .text('누적')
+      .append('div')
+      .attr('class', 'toggle active')
+      .on('toggle', function() {
+        isStacked = d3.event.detail.isActive;
+        update();
+      })
+      .append('div')
+      .attr('class', 'toggle-handle')
+
+      /*
       .append('input')
       .property({'class':'stacked', 'id':'stacked_or_not', 'type':'checkbox', 'name':'type', 'value':'stacked', 'checked':true})
       .on('change', function(d,i) {
         isStacked = d3.select(this).property('checked')
         update();
       })
-
-      /*
       <div class="toggle">
         <div class="toggle-handle"></div>
       </div>

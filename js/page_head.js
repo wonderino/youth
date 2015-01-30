@@ -1,17 +1,23 @@
 (function() {
-  var headStr = '<title>뉴스젤리 X 다음뉴스펀딩</title><meta name="viewport" content="initial-scale=1, maximum-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="shortcut icon" type="image/x-icon" href="http://newsjel.ly/static/favicon.ico?64"><link href="../../css/ratchet.min.css" rel="stylesheet"><script src="../../js/ratchet.min.js"></script><link rel="stylesheet" href="../../css/menu.css">'
-  $('head').append(headStr)
+  var menu = d3.select('head')
+  menu.append('title')
+    .html('뉴스젤리 X 다음뉴스펀딩')
 
-
-//head
-
-//body
-  //header
-
-  //article
-
-  //footer
-
-//popover
+  menu.append('meta')
+    .property({'charset':'utf-8'});
+  menu.append('meta')
+    .property({'name':'viewport', 'content':'initial-scale=1, maximum-scale=1'})
+  menu.append('meta')
+    .property({'name':'apple-mobile-web-app-capable', 'content':'yes'})
+  menu.append('meta')
+    .property({'name':'apple-mobile-web-app-status-bar-style', 'content':'black'})
+  menu.append('link')
+    .property({'rel':'shortcut icon', 'type':'image/x-icon', 'htef':'http://newsjel.ly/static/favicon.ico?64'})
+  menu.append('link')
+    .property({'href':'../../css/ratchet.min.css', 'rel':'stylesheet'})
+  menu.append('link')
+    .property({'href':'../../css/menu.css', 'rel':'stylesheet'})
+  menu.append('script')
+    .property({'src':'../../js/ratchet.min.js'})
 
 })();

@@ -22,6 +22,13 @@
       "href_back":"http://m.newsfund.media.daum.net/episode/330",
       "series" : "에필로그",
       "chart_no" :2
+    },
+    {
+      "title" : "연도별 세대별 자기계발서 출간수",
+      "href":"self_help_book_generation",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "에필로그",
+      "chart_no" :3
     }
   ]
 }
