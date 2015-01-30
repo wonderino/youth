@@ -159,7 +159,7 @@ d3.stackedAreaStatic = function module() {
       .attr("text-anchor", "end")
       .attr("x", 0)
       .attr("y", 0)
-      .attr("dx", '-.35em')
+      //.attr("dx", '-.35em')
       .attr("dy", '-1em')
       .text(function() {
         if(isNormalized) {
