@@ -61,11 +61,16 @@ d3.stackedAreaStatic = function module() {
         .html()
 
       d3.select(this).style('width', windowWidth+'px');
-      d3.select(this).select('div.menu')
-      .append('label')
-      .attr('for', 'stacked_or_not')
-      .text('누적')
-      .append('div')
+      var li = d3.select(this).select('div.menu')
+      .append('ul')
+      .attr('class', 'table-view')
+      .append('li')
+      .attr('class', 'table-view-cell')
+
+      li.append('span')
+        .html('누적')
+
+      li.append('div')
       .attr('class', 'toggle active')
       .on('toggle', function() {
         isStacked = d3.event.detail.isActive;
