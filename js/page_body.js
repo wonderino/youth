@@ -34,7 +34,7 @@
 
   footer.append('div')
     .attr('class', 'channels')
-    .html('<a href="http://newsjel.ly"><img class="logo" src="../../img/logo.png" /></a>')
+    .html('<a href="http://newsjel.ly"><img class="logo" src="../../img/logo-src.png" srcset="../../img/logo-1x.png 1x, ../../img/logo-2x.png 2x" /></a>')
 
   var myInfo = d3.select('body').append('div')
     .attr('id', 'myInfo')

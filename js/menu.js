@@ -18,7 +18,7 @@
       .html(thisPage.title)
       .append('span')
       .attr('class', 'icon icon-caret')
-    console.log(data.title);
+  
     var info = d3.select('#myInfo')
     info.select('header h1.title').html(data.title)
     info.select('ul.table-view li').html(data.desc)
