@@ -45,6 +45,7 @@ span.icon.icon-check {
 a#myBackButton button.btn {
   color : #0D905B;
   border-color : #0D905B;
+  border-radius : 7px;
 }
 
 div#myInfo .table-view-cell {
