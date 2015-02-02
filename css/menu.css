@@ -1,14 +1,52 @@
+
 h1.title {
-  font-size:16px;
+  background-color : #0D905B;
+  font-size: 16px;
+  color : #fff;
 }
 
 div#myFooter {
   padding : 20px 10px;
-  font-size: 1em;
+  font-size: 14px;
+  color : #c1c1c1;
   background-color : #333;
   text-align : center;
 }
 
+a[href="#myInfo"] {
+  color : #fff;
+}
+
+div#myFooter a{
+  color: #0D905B;
+}
+
 div#myFooter img.logo {
     widht : 120px;
+}
+
+.popover {
+  font-size:16px;
+}
+
+.popover .table-view-cell {
+  padding-right : 45px;
+}
+
+span.icon.icon-check {
+  font-size : 18px;
+}
+
+.btn-block {
+  width : 60%;
+  margin: 0 auto 10px auto;
+}
+
+a#myBackButton button.btn {
+  color : #0D905B;
+  border-color : #0D905B;
+}
+
+div#myInfo .table-view-cell {
+  padding-right : 15px;
 }

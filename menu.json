@@ -1,33 +1,89 @@
 {
-  "title":"다음뉴스펀딩 X 뉴스젤리",
-  "desc" :"blah blah blah",
+  "title":"다음뉴스펀딩 '자기계발 권하는 사회'",
+  "desc" :"<p>&nbsp;부와 명예라는 과시적인 성공을 위해 보기 시작한 자기계발서는 이제 생존을 위한 서바이벌 가이드가 되어버렸다. 평범하게 사는 것이 가장 어려워진 시대, 지난 어떤 세대보다 많은 공부를 해왔지만 여전히 ‘공부'에 미쳐야하는 숙명을 가진 청년들은 선생없는 사회에서 자기계발서에 의지할 수 밖에 없다. 하지만 '나도 젊었을 땐 말이야…’ 같은 이야기로 한 몫 벌어보려는 어른들에게, 아픈 청년들은 환자가 아니라 손 쉬운 먹잇감, 즉 한 명의 소비자일뿐이다. 청년들의 아픔을 들여다보고, 그들의 고통을 가만히 듣기보다는 ‘더 미쳐라. 더 공부해라’ 고 다 그칠뿐이다. 행복을 책으로 배워야하는 사회, 그것이 지금 대한민국의 모습이다.</p> <p>&nbsp;뉴스젤리는 현재를 살아가는 20-30대 청년들로 이루어진 데이터 저널리즘 벤쳐 기업입니다. 저희는 자기계발서들이 요란하게 자랑하는, 청춘의 고통을 단숨에 종식시킬 처방전보다는 20-30세대를 힘들게 하는 일상에 주목하고 그것들을 데이터를 통해 더욱 적나라하게 드러내고 함께 진단 학고자 합니다 총 6개의 글을 통해 취업 - 직장생활 - 결혼 - 내집 마련 - 출산/육아 과정에서 벌어지는 개인들의 힘겨운 투쟁을, 그들이 일상에서 생산하는 말과 글 속에서 분석하고 시각화 하여 함께 공유하고자 합니다.</p>",
   "pages" : [
     {
       "title" : "미칠 것을 권하는 자기계발서들",
       "href":"be_crazy",
       "href_back":"http://m.newsfund.media.daum.net/episode/330",
-      "series" : "에필로그",
+      "series" : "에필로그 자기계발 권하는 사회",
       "chart_no" : 0
     },
     {
       "title" : "베스트셀러 속 자기계발서",
       "href":"bestseller",
       "href_back":"http://m.newsfund.media.daum.net/episode/330",
-      "series" : "에필로그",
+      "series" : "에필로그 자기계발 권하는 사회",
       "chart_no" :1
     },
     {
       "title" : "연도별 자기계발서 출간수",
       "href":"self_help_book_total",
       "href_back":"http://m.newsfund.media.daum.net/episode/330",
-      "series" : "에필로그",
+      "series" : "에필로그 자기계발 권하는 사회",
       "chart_no" :2
+    },
+    {
+      "title" : "연도별 분야별 자기계발서 출간수",
+      "href":"self_help_book_category",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "에필로그 자기계발 권하는 사회",
+      "chart_no" :3
     },
     {
       "title" : "연도별 세대별 자기계발서 출간수",
       "href":"self_help_book_generation",
       "href_back":"http://m.newsfund.media.daum.net/episode/330",
-      "series" : "에필로그",
+      "series" : "에필로그 자기계발 권하는 사회",
+      "chart_no" :4
+    },
+    {
+      "title" : "연도별 취업관련 자기계발서 출간수",
+      "href":"self_help_book_recruiting",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "1화 무엇이 취준생을 울리나",
+      "chart_no" :0
+    },
+    {
+      "title" : "취업커뮤니티 연도별 'ㅠㅠ' 언급량 추이",
+      "href":"you_you_articles",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "1화 무엇이 취준생을 울리나",
+      "chart_no" :1
+    },
+    {
+      "title" : "취업커뮤니티 'ㅠㅠ' 연관 키워드",
+      "href":"you_you_related_keywords",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "1화 무엇이 취준생을 울리나",
+      "chart_no" :2
+    },
+    {
+      "title" : "연도별 스터디 모집 게시물수",
+      "href":"study_articles",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "2화 스터디 공화국",
+      "chart_no" :0
+    },
+    {
+      "title" : "연도별 스터디 연관 키워드 (기업/분야)",
+      "href":"parallel_tags_company",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "2화 스터디 공화국",
+      "chart_no" :1
+    },
+    {
+      "title" : "연도별 스터디 연관 키워드 (종목/시험)",
+      "href":"parallel_tags_exam",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "2화 스터디 공화국",
+      "chart_no" :2
+    },
+    {
+      "title" : "연도별 스터디 연관 키워드(열정)",
+      "href":"parallel_tags_passion",
+      "href_back":"http://m.newsfund.media.daum.net/episode/330",
+      "series" : "2화 스터디 공화국",
       "chart_no" :3
     }
   ]

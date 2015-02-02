@@ -1,0 +1,77 @@
+body {
+  margin: .5em auto .5em auto;
+  font-family : "Apple SD Gothic Neo","Malgun Gothic",Dotum,sans-serif
+}
+
+div.chart {
+  margin: 0 auto;
+}
+
+div.nj-title, div.sub_title {
+  margin : 0 auto;
+  padding : 4px;
+  width : 100%;
+  font-size : 1em;
+  text-align: center;
+  font-weight: bold;
+  font-color:#353535;
+}
+
+div.sub_title {
+  font-weight : 200;
+  font-size : .85em;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #9d9d9d;
+  shape-rendering: crispEdges;
+}
+.axis text,  text.label{
+  font-size : 0.75em;
+  dx : 1.0em;
+  color : #606060;
+}
+
+.axis line {
+  stroke: #808080;
+  stroke-width : .5px;
+}
+
+.axis .minor {
+  stroke-opacity: .5;
+}
+
+.y.axis path.domain{
+  stroke:none;
+}
+
+.y.axis > g:nth-child(1) > line {
+  stroke: #353535;
+  stroke-width : 2px;
+}
+
+
+path.line, circle.circle {
+  stroke-width : 3px;
+}
+
+.legend line {
+  stroke-width : 1.5;
+}
+
+.legend text{
+  font-size: 11px ;
+}
+
+div.desc, div.source {
+  padding : 4px 16px;
+  font-size : 13px;
+  font-color:#aaa;
+  font-style : italic;
+}
+
+div.source {
+  text-align : right;
+}

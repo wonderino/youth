@@ -151,7 +151,7 @@ d3.stackedAreaStatic = function module() {
       .attr("x", width)
       .attr("y", height+margin.bottom)
       .attr("dx", '-.35em')
-      .attr("dy", '-1.71em')
+      .attr("dy", '-1.35em')
       .text('(단위/' + xUnit + ')')
 
       svg.append("text")

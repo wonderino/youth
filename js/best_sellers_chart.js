@@ -86,14 +86,15 @@ d3.bestSeller = function module() {
       d3.select(this).style('width', windowWidth+'px');
       var menu = d3.select(this).append('div')
         .attr('class', 'menu')
-      menu.append('input')
-        .attr('class', 'left')
-        .property({'type':'button', 'value':'<<'})
+      menu.append('button')
+        .classed({'btn':true, 'pull-left':true})
+        .html('<<')
+      menu.append('button')
+        .classed({'btn':true, 'pull-right':true})
+        .html('>>')
       menu.append('span')
         .attr('class', 'year')
-      menu.append('input')
-        .attr('class', 'right')
-        .property({'type':'button', 'value':'>>'})
+
 
       var legend = d3.select(this).append('svg')
       .attr("width", width + margin.left + margin.right)
@@ -206,14 +207,14 @@ d3.bestSeller = function module() {
 
       resetData(currentIndex);
 
-      menu.select('input.right').on('click', function() {
+      menu.select('.btn.pull-right').on('click', function() {
         currentIndex --;
         if (currentIndex < 0 ) currentIndex = yearNestLength-1;
         resetData(currentIndex);
         update(currentBooks);
       });
 
-      menu.select('input.left').on('click',function() {
+      menu.select('.btn.pull-left').on('click',function() {
         currentIndex ++;
         if (currentIndex >= yearNestLength ) currentIndex = 0;
         resetData(currentIndex);

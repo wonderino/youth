@@ -1,0 +1,107 @@
+body {
+  margin: .5em auto .5em auto;
+  font-family : "Apple SD Gothic Neo","Malgun Gothic",Dotum,sans-serif;
+
+}
+
+div.chart {
+  margin: 0 auto;
+}
+
+div.title {
+  margin : 0 auto;
+  width : 100%;
+  font-size : 1em;
+  text-align: center;
+  font-weight: bold;
+  font-color:#353535;
+}
+
+text.half_yearly {
+  font-size: .9em;
+  fill :#353535;
+}
+
+text.type {
+  font-size:1em;
+  color:#aaa;
+  opacity : .5;
+}
+
+text.type.selected {
+  color:#353535;
+  opacity : 1;
+  font-weight : bold;
+}
+
+text.legend {
+  fill : #111;
+  font-size: .7em;
+}
+
+.list_text {
+  opacity : 1.0;
+  font-size: .8em;
+  cursor : pointer;
+}
+
+.list_text.all {
+  font-size : .9em;
+  opacity : 1.0;
+  font-weight : bold;
+}
+
+.list_text.selected {
+  font-size : .9em;
+  opacity : 1.0;
+  font-weight : bold;
+}
+
+
+.link {
+  fill: none;
+}
+
+
+.link.selected {
+
+  stroke-width : 1.5;
+  stroke-opacity : 1.0;
+}
+
+.link.selected.blue {
+  stroke : #1a468c;
+}
+
+.link.selected.yellow {
+  stroke : #f9a33d;
+}
+
+.link.selected.red {
+  stroke : #d13d30;
+}
+
+rect.bbox {
+  opacity : .1;
+
+}
+
+rect.bbox.type {
+  fill:#353535;
+}
+
+rect.bbox.keyword {
+  fill:#d13d30;
+}
+
+
+div.desc, div.source {
+  padding : 4px 16px;
+  font-size : 13px;
+  font-color:#aaa;
+  font-style : italic;
+}
+
+div.source {
+  text-align : right;
+}
