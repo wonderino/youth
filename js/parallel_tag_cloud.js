@@ -69,13 +69,27 @@ function getSameKeywords(keyword) {
 
 function drawTypes(types) {
   var tab = 50;
+  var startPoint = windowWidth;
+  var typePos = []
+  var accumPos = 0;
+  accumPos = types.reduce(function(pre, cur, i){
+    typePos.push(pre);
+    var curWidth = typeMap.get(cur).length * 16 + 8;
+    pre += curWidth;
+    return pre;
+  }, accumPos)
+  startPoint -= accumPos;
+  startPoint *= .5;
+
   svg.selectAll('.type')
   .data(types)
   .enter().append('text')
   .attr('class', 'type')
-  .attr('x', function(d,i) {return tab*i + (width-tab*(types.length-1))/2})
+  .attr('x', function(d,i) {
+    return startPoint + typePos[i] + 4;
+   })//tab*i + (width-tab*(types.length-1))/2})
   .attr('y', margin.top)
-  .attr('text-anchor', 'middle')
+  .attr('text-anchor', 'left')
   .attr('dy', '.35em')
   .text(function(d) {return typeMap.get(d)})
   .on('click', function(d,i) {

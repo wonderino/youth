@@ -898,9 +898,10 @@
 
   var moveAction = function (e) {
     e = e.originalEvent || e;
-
-    if (e.touches.length > 1) {
-      return; // Exit if a pinch
+    if (e.touches) {
+      if (e.touches.length > 1) {
+        return; // Exit if a pinch
+      }
     }
 
     if (!toggle) {
