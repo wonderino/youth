@@ -68,13 +68,14 @@ function getSameKeywords(keyword) {
 }
 
 function drawTypes(types) {
-  var tab = 50;
   var startPoint = windowWidth;
   var typePos = []
   var accumPos = 0;
+  var fontSize = 16;
+  var padding = 8;
   accumPos = types.reduce(function(pre, cur, i){
     typePos.push(pre);
-    var curWidth = typeMap.get(cur).length * 16 + 8;
+    var curWidth = typeMap.get(cur).length * fontSize + padding;
     pre += curWidth;
     return pre;
   }, accumPos)
@@ -86,7 +87,7 @@ function drawTypes(types) {
   .enter().append('text')
   .attr('class', 'type')
   .attr('x', function(d,i) {
-    return startPoint + typePos[i] + 4;
+    return startPoint + typePos[i] + padding/2;
    })//tab*i + (width-tab*(types.length-1))/2})
   .attr('y', margin.top)
   .attr('text-anchor', 'left')
