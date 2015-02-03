@@ -18,7 +18,7 @@
       .html(thisPage.title)
       .append('span')
       .attr('class', 'icon icon-caret')
-  
+
     var info = d3.select('#myInfo')
     info.select('header h1.title').html(data.title)
     info.select('ul.table-view li').html(data.desc)
@@ -67,5 +67,20 @@
     })
     .classed({'table-view-divider':true})
     .html(function(d){return d.title})
+
+    /*
+    d3.select('body header h1.title')
+    .on('click', function() {
+      if(menu.style('display') == 'block') {
+          menu.style('display', 'none')
+          .classed({'visible':false})
+      } else {
+        menu.style('display', 'block')
+        .classed({'visible':true})
+      }
+
+    })
+    */
+
   });
 }());

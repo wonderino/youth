@@ -18,6 +18,6 @@
   menu.append('link')
     .property({'href':'../../css/menu.css', 'rel':'stylesheet'})
   menu.append('script')
-    .property({'src':'../../js/ratchet.min.js'})
+    .property({'src':'../../js/ratchet.js'})
 
 })();

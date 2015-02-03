@@ -90,6 +90,12 @@
       popover.classList.remove('visible');
       popover.parentNode.removeChild(backdrop);
     });
+    /// added by inho.won
+    element.addEventListener('click', function () {
+      popover.addEventListener('webkitTransitionEnd', onPopoverHidden);
+      popover.classList.remove('visible');
+      popover.parentNode.removeChild(backdrop);
+    });
 
     return element;
   }());
@@ -133,8 +139,26 @@
     popover.parentNode.appendChild(backdrop);
   };
 
-  window.addEventListener('touchend', showHidePopover);
-
+  var detectmob = function() {
+   if( navigator.userAgent.match(/Android/i)
+   || navigator.userAgent.match(/webOS/i)
+   || navigator.userAgent.match(/iPhone/i)
+   || navigator.userAgent.match(/iPad/i)
+   || navigator.userAgent.match(/iPod/i)
+   || navigator.userAgent.match(/BlackBerry/i)
+   || navigator.userAgent.match(/Windows Phone/i)
+   ){
+      return true;
+    }
+   else {
+      return false;
+    }
+  }
+  if (detectmob()) {
+    window.addEventListener('touchend', showHidePopover);
+  } else {
+    window.addEventListener('click', showHidePopover); /// added by inho.won
+  }
 }());
 
 /* ========================================================================
