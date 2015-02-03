@@ -1,4 +1,4 @@
-(function() {
+!(function() {
 
   var body = d3.select('body')
   var header = body.insert('header', ':first-child')
