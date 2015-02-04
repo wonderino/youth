@@ -17,7 +17,11 @@
     .property({'href':'../../css/ratchet.min.css', 'rel':'stylesheet'})
   menu.append('link')
     .property({'href':'../../css/menu.css', 'rel':'stylesheet'})
+  menu.append('link')
+    .property({'href':'../../css/pace_themes.css', 'rel':'stylesheet'})
   menu.append('script')
     .property({'src':'../../js/ratchet_customized.js'})
+  menu.append('script')
+  .property({'src':'../../js/pace.min.js'})
 
 })();
