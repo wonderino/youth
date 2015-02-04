@@ -4,6 +4,22 @@
   var href = window.location.href;
   var splited = href.split('/');
 
+  var scrollToLi = function(self) {
+      var dist = d3.select(self).node()
+      .getBoundingClientRect().top
+      + (window.pageYOffset || document.documentElement.scrollTop) ;
+      var offset = function (offset) {
+        return function() {
+          var fromTo = [window.pageYOffset || document.documentElement.scrollTop, offset];
+          var i = d3.interpolateNumber(fromTo[0], fromTo[1])
+          return function(t) {scrollTo(0, i(t)); };
+        }
+      }
+      d3.transition()
+      .duration(800)
+      .tween('scroll', offset(dist))
+    }
+
   d3.json(protocol + '//' + host + '/menu.json',function(data) {
     var thisPage = data.pages.filter(function(p) {
       return p.href === splited[splited.length-2]
@@ -13,11 +29,44 @@
     }
     thisPage = thisPage[0];
     thisPage.is_current = true;
+    var menu = d3.select('#myMenu')
+    menu.select('h1.title').html(data.title);
 
-    d3.select('body header h1.title')
+    var title = d3.select('body header h1.title')
       .html(thisPage.title)
-      .append('span')
+      .on('click', function() {
+
+      })
+      .on('touchend', function() {
+        window.setTimeout(function(){
+          var selected = menu.select('li a.selected')
+          var dividerRect = menu.selectAll('li.table-view-divider')
+          .filter(function(d) {
+            return (data.series_titles.indexOf(d.title) === selected.datum().series_no)
+          })
+          .node().getBoundingClientRect();
+
+          var top = dividerRect.top - 44;//- dividerRect.height
+          //var top = menu.select('li a.selected').node().getBoundingClientRect().top
+          top -= menu.select('ul.table-view').node().getBoundingClientRect().top;
+
+          var offset = function (offset) {
+            return function() {
+              var fromTo = [0, offset];
+              var i = d3.interpolateNumber(fromTo[0], fromTo[1])
+              return function(t) { menu.select('ul.table-view').node().scrollTop = i(t); };
+            }
+          }
+          d3.transition()
+          .duration(600)
+          .tween('scroll', offset(top))
+          //menu.select('ul.table-view').node().scrollTop += top;
+        }, 100);
+      })
+
+      title.append('span')
       .attr('class', 'icon icon-caret')
+
 
     var info = d3.select('#myInfo')
     info.select('header h1.title').html(data.title)
@@ -26,16 +75,14 @@
     d3.select('#myBackButton')
       .property('href', thisPage.href_back)
 
-    var menu = d3.select('#myMenu')
-    menu.select('h1.title').html(data.title);
-
     var nestedData = d3.nest()
-      .key(function(d) {return d.series;})
+      .key(function(d) {return d.series_no;})
+      .sortKeys(function(a,b){return b-a})
       .sortValues(function(a,b) {return a.chart_no - b.chart_no})
       .entries(data.pages);
 
     var allPages = nestedData.reduce(function(pre, cur) {
-      pre.push({'title':cur.key, 'is_divider':true})
+      pre.push({'title':data.series_titles[cur.key], 'is_divider':true})
       Array.prototype.push.apply(pre, cur.values);
       return pre;
     }, [])
@@ -68,20 +115,6 @@
     })
     .classed({'table-view-divider':true})
     .html(function(d){return d.title})
-
-    /*
-    d3.select('body header h1.title')
-    .on('click', function() {
-      if(menu.style('display') == 'block') {
-          menu.style('display', 'none')
-          .classed({'visible':false})
-      } else {
-        menu.style('display', 'block')
-        .classed({'visible':true})
-      }
-
-    })
-    */
 
   });
 }());
