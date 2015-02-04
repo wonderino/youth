@@ -18,7 +18,7 @@
   menu.append('link')
     .property({'href':'../../css/menu.css', 'rel':'stylesheet'})
   menu.append('link')
-    .property({'href':'../../css/pace_themes.css', 'rel':'stylesheet'})
+    .property({'href':'../../css/pace_theme.css', 'rel':'stylesheet'})
   menu.append('script')
     .property({'src':'../../js/ratchet_customized.js'})
   menu.append('script')
