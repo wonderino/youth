@@ -34,11 +34,9 @@
 
     var title = d3.select('body header h1.title')
       .html(thisPage.title)
-      .on('click', function() {
-
-      })
       .on('touchend', function() {
         window.setTimeout(function(){
+          menu.select('ul.table-view').node().scrollTop = 0;
           var selected = menu.select('li a.selected')
           var dividerRect = menu.selectAll('li.table-view-divider')
           .filter(function(d) {
