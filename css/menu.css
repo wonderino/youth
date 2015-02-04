@@ -1,8 +1,23 @@
 
-h1.title {
+header h1.title {
   background-color : #0D905B;
   font-size: 16px;
   color : #fff;
+}
+
+.popover header h1.title {
+  background-color : #fff;
+  color : #111;
+  font-weight : bold;
+}
+
+#myMenu li.table-view-divider {
+  background-color : #0D905B;
+  color : #fff;
+}
+
+#myMenu li.table-view-cell a.selected {
+  color : #0D905B;
 }
 
 div#myFooter {
@@ -22,7 +37,7 @@ div#myFooter a{
 }
 
 div#myFooter img.logo {
-    widht : 120px;
+  widht : 131px;
 }
 
 .popover {
@@ -40,6 +55,8 @@ span.icon.icon-check {
 .btn-block {
   width : 60%;
   margin: 0 auto 10px auto;
+  font-size : 14px;
+  padding : 10px 0;
 }
 
 a#myBackButton button.btn {
@@ -50,4 +67,12 @@ a#myBackButton button.btn {
 
 div#myInfo .table-view-cell {
   padding-right : 15px;
+  border-bottom : none;
+}
+
+
+div#myInfo img.thumb {
+  width : 102px;
+  margin : 0 auto;
+  display : block;
 }

@@ -21,7 +21,7 @@
 
     var info = d3.select('#myInfo')
     info.select('header h1.title').html(data.title)
-    info.select('ul.table-view li').html(data.desc)
+    info.select('li.desc').html(data.desc)
 
     d3.select('#myBackButton')
       .property('href', thisPage.href_back)
@@ -59,6 +59,7 @@
     .filter(function(d) {
       return d.is_current;
     })
+    .classed({'selected': true})
     .append('span')
     .attr('class', 'icon icon-check')
 

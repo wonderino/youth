@@ -46,10 +46,20 @@
     .attr('class', 'bar bar-nav')
     .append('h1')
     .attr('class', 'title')
-  myInfo.append('ul')
+
+  var myInfoUl = myInfo.append('ul')
     .attr('class', 'table-view')
+
+  myInfoUl
     .append('li')
     .attr('class', 'table-view-cell')
+    .append('img')
+    .property('src','../../img/circle@2x.png')
+    .attr('class', 'thumb')
+
+  myInfoUl
+    .append('li')
+    .attr('class', 'table-view-cell desc')
 
   var myMenu = body.append('div')
     .attr('id', 'myMenu')

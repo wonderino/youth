@@ -40,7 +40,6 @@ d3.stackedAreaStatic = function module() {
   var stack = d3.layout.stack()
   .values(function(d) { return d.values; });
 
-
   function getSvg(self) {
     return d3.select(self).append("svg")
     .attr("class", 'canvas')
@@ -61,36 +60,27 @@ d3.stackedAreaStatic = function module() {
         .html()
 
       d3.select(this).style('width', windowWidth+'px');
-      var li = d3.select(this).select('div.menu')
-      .append('ul')
-      .attr('class', 'table-view')
-      .append('li')
-      .attr('class', 'table-view-cell')
 
-      li.append('span')
-        .html('누적')
+      if (labelMap.keys().length > 1) {
+        var li = d3.select(this).select('div.menu')
+        .append('ul')
+        .attr('class', 'table-view')
+        .append('li')
+        .attr('class', 'table-view-cell')
 
-      li.append('div')
-      .attr('class', 'toggle active')
-      .on('toggle', function() {
-        isStacked = d3.event.detail.isActive;
-        update();
-      })
-      .append('div')
-      .attr('class', 'toggle-handle')
+        li.append('span')
+          .html('누적')
 
-      /*
-      .append('input')
-      .property({'class':'stacked', 'id':'stacked_or_not', 'type':'checkbox', 'name':'type', 'value':'stacked', 'checked':true})
-      .on('change', function(d,i) {
-        isStacked = d3.select(this).property('checked')
-        update();
-      })
-      <div class="toggle">
-        <div class="toggle-handle"></div>
-      </div>
-      */
-
+        li.append('div')
+        .attr('class', 'toggle active')
+        .on('toggle', function() {
+          isStacked = d3.event.detail.isActive;
+          update();
+        })
+        .append('div')
+        .attr('class', 'toggle-handle')
+      }
+      
       if (!svg) {
         svg = getSvg(this);
       }
