@@ -46,8 +46,7 @@
           })
           .node().getBoundingClientRect();
 
-          var top = dividerRect.top - 44;//- dividerRect.height
-          //var top = menu.select('li a.selected').node().getBoundingClientRect().top
+          var top = dividerRect.top - menu.select('header h1.title').node().getBoundingClientRect().height;
           top -= menu.select('ul.table-view').node().getBoundingClientRect().top;
 
           var offset = function (offset) {
