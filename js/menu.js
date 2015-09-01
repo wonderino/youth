@@ -4,6 +4,10 @@
   var href = window.location.href;
   var splited = href.split('/');
 
+ if (host =='wonderino.github.io') {
+   host = 'wonderino.github.io/youth'
+ }
+
   var scrollToLi = function(self) {
       var dist = d3.select(self).node()
       .getBoundingClientRect().top
