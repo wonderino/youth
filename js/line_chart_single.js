@@ -1,6 +1,6 @@
 d3.line_chart_single = function(path, title, subTitle,type, typeKor, typeCol, xUnit, yUnit, source, className) {
   $(className).width(Math.max(280, Math.min($('body').width(), 480)));
-  var windowWidth = $className).width()
+  var windowWidth = $(className).width();
   var margin = {top: 55, right: 20, bottom: 50, left: 60},
   width = windowWidth - margin.left - margin.right,
   height = windowWidth - margin.top - margin.bottom;
