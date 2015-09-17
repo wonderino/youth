@@ -1,7 +1,7 @@
-d3.parallel_tag_cloud = function(path, typeMap, title, source) {
+d3.parallel_tag_cloud = function(path, typeMap, title, source, className) {
 
-$('div.chart').width(Math.max(300, Math.min($('body').width(), 480)));
-var windowWidth = $('div.chart').width()
+$(className).width(Math.max(300, Math.min($('body').width(), 480)));
+var windowWidth = $(className).width()
 var margin = {top: 8, right: 5, bottom: 130, left: 5},
 width = windowWidth - margin.left - margin.right,
 height = window.innerHeight * .9 - margin.top - margin.bottom;
@@ -21,7 +21,7 @@ var x = d3.scale.ordinal()
 var y = d3.scale.ordinal()
 .rangeRoundBands([0, height], .075);
 
-var svg = d3.select("div.chart").append("svg")
+var svg = d3.select(className).append("svg")
 .attr("class", "canvas")
 .attr("width", width + margin.left + margin.right)
 .attr("height", height + margin.top + margin.bottom)
@@ -376,7 +376,7 @@ select.enter().append('text')
       drawTypes(types)
       update(true, types[0]);
 
-      d3.select("div.parallel_tag_cloud").append('div')
+      d3.select(className).append('div')
       .attr('class', 'source')
       .html(source);
     });
