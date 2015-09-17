@@ -1,4 +1,4 @@
-d3.parallel_tag_cloud = function(path, typeMap, title, source, className) {
+d3.parallel_tag_cloud_123 = function(path, typeMap, title, source, className) {
 
 $(className).width(Math.max(300, Math.min($('body').width(), 480)));
 var windowWidth = $(className).width()
