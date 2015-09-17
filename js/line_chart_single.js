@@ -1,6 +1,6 @@
-d3.line_chart_single = function(path, title, subTitle,type, typeKor, typeCol, xUnit, yUnit, source) {
-  $('div.chart').width(Math.max(280, Math.min($('body').width(), 480)));
-  var windowWidth = $('div.chart').width()
+d3.line_chart_single = function(path, title, subTitle,type, typeKor, typeCol, xUnit, yUnit, source, className) {
+  $(className).width(Math.max(280, Math.min($('body').width(), 480)));
+  var windowWidth = $className).width()
   var margin = {top: 55, right: 20, bottom: 50, left: 60},
   width = windowWidth - margin.left - margin.right,
   height = windowWidth - margin.top - margin.bottom;
@@ -30,15 +30,15 @@ d3.line_chart_single = function(path, title, subTitle,type, typeKor, typeCol, xU
   .x(function(d) { return x(d.year); })
   .y(function(d) { return y(d[type]); });
 
-  d3.select('div.chart').append('div')
+  d3.select(className).append('div')
   .attr('class', 'nj-title')
   .html(title)
 
-  d3.select('div.chart').append('div')
+  d3.select(className).append('div')
   .attr('class', 'sub_title')
   .html(subTitle)
 
-  var svg = d3.select("div.chart").append("svg")
+  var svg = d3.select(className).append("svg")
   .attr("class", "canvas")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -99,7 +99,7 @@ d3.line_chart_single = function(path, title, subTitle,type, typeKor, typeCol, xU
     .style("stroke", function(d) { return typeCol })
     .style('fill', '#fff')
 
-    d3.select("div.chart").append('div')
+    d3.select(className).append('div')
     .attr('class', 'source')
     .html(source);
   })
